@@ -55,6 +55,7 @@ Comme nous souhaitions également tester les variantes sémantiques et la diachr
 Nous avons comparé la précision des réponses (nombre de bonnes réponses sur le total des requêtes analysées) par LLM et nous avons obtenu ces résultats : 
 
 |&nbsp;            |             Résultats            ||&nbsp;   |             Précision            ||
+|------------------|-----------------|-----------------|---------|-----------------|-----------------|
 |&nbsp;            | Bonnes réponses | Autres réponses |&nbsp;   | Bonnes réponses | Autres réponses |
 |------------------|-----------------|-----------------|---------|-----------------|-----------------|
 | ChatGPT (GPT4)   |       291       |       245       |&nbsp;   |      54,29%     |     45,71%      |
@@ -67,8 +68,7 @@ Nous avons comparé la précision des réponses (nombre de bonnes réponses sur 
 | Koala            |       120       |       416       |&nbsp;   |      22,39%     |     77,61%      |
 | Vigogne          |       94        |       442       |&nbsp;   |      17,54%     |     82,46%      |
 | Falcon           |       22        |       514       |&nbsp;   |       4,10%     |     95,90%      |
-|&nbsp;            |&nbsp;           |&nbsp;           |&nbsp;   |&nbsp;           |&nbsp;           |
-| Totaux           |      1801       |       3559      | Moyenne |      33,60%     |     66,40%      |
+| **Totaux**       |      **1801**   |     **3559**    | **Moyenne** |    **33,60%**   |   **66,40%**    |
 
 Nous avons également dressé un tableau des résultats par thématique historique, afin de vérifier les différences de précision des LLM testés :
 
