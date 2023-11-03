@@ -56,7 +56,7 @@ Nous avons comparé la précision des réponses (nombre de bonnes réponses sur 
 
 |&nbsp;            |             Résultats            ||&nbsp;   |             Précision            ||
 |&nbsp;            | Bonnes réponses | Autres réponses |&nbsp;   | Bonnes réponses | Autres réponses |
-|------------------|-----------------|-----------------|---------|-----------------|-----------------|
+|------------------|:---------------:|:---------------:|:-------:|:---------------:|:---------------:|
 | ChatGPT (GPT4)   |       291       |       245       |&nbsp;   |      54,29%     |     45,71%      |
 | ChatGPT (GPT3.5) |       276       |       260       |&nbsp;   |      51,49%     |     48,51%      |
 | Bard             |       246       |       290       |&nbsp;   |      45,90%     |     54,10%      |
