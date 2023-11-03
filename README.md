@@ -54,8 +54,7 @@ Comme nous souhaitions également tester les variantes sémantiques et la diachr
 
 Nous avons comparé la précision des réponses (nombre de bonnes réponses sur le total des requêtes analysées) par LLM et nous avons obtenu ces résultats : 
 
-|&nbsp;            |             Résultats             |&nbsp;   |             Précision             |
-|&nbsp;            | Bonnes réponses | Autres réponses |&nbsp;   | Bonnes réponses | Autres réponses |
+|&nbsp;|Résultats<br/>*Bonnes réponses*|Résultats<br/>*Autres réponses* |&nbsp;|Précision<br/>*Bonnes réponses*|Précision<br/>*Autres réponses*|
 |------------------|:---------------:|:---------------:|:-------:|:---------------:|:---------------:|
 | ChatGPT (GPT4)   |       291       |       245       |&nbsp;   |      54,29%     |     45,71%      |
 | ChatGPT (GPT3.5) |       276       |       260       |&nbsp;   |      51,49%     |     48,51%      |
