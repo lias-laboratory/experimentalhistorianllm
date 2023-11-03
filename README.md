@@ -54,19 +54,19 @@ Comme nous souhaitions également tester les variantes sémantiques et la diachr
 
 Nous avons comparé la précision des réponses (nombre de bonnes réponses sur le total des requêtes analysées) par LLM et nous avons obtenu ces résultats : 
 
-                   |             Résultats			   |         |             Précision	         |
-                   |-----------------|-----------------|         |-----------------|-----------------|
-  	               | Bonnes réponses | Autres réponses |         | Bonnes réponses | Autres réponses |
+|                  |             Résultats             |         |             Précision             |
+|                  |-----------------|-----------------|         |-----------------|-----------------|
+|                  | Bonnes réponses | Autres réponses |         | Bonnes réponses | Autres réponses |
 |------------------|-----------------|-----------------|---------|-----------------|-----------------|
-| ChatGPT (GPT4)   |       291       |       245       | 		 |      54,29%     |     45,71%      |
+| ChatGPT (GPT4)   |       291       |       245       |         |      54,29%     |     45,71%      |
 | ChatGPT (GPT3.5) |       276       |       260       |         |      51,49%     |     48,51%      |
-| Bard             |       246       |       290       | 		 |      45,90%     |     54,10%      |
-| TextCortex       |       277       |       259       | 		 |      51,68%     |     48,32%      |
-| Guacano          |       183       |       353       | 		 |      34,14%     |     65,86%      |
-| Vicuna           |       197       |       339       | 		 |      36,75%     |     63,25%      |
-| GPT4All          |       95	     |       441       | 		 |      17,72%     |     82,28%      |
-| Koala            |       120       |       416       | 		 |      22,39%     |     77,61%      |
-| Vigogne          |       94	     |       442       | 		 |      17,54%     |     82,46%      |
+| Bard             |       246       |       290       |         |      45,90%     |     54,10%      |
+| TextCortex       |       277       |       259       |         |      51,68%     |     48,32%      |
+| Guacano          |       183       |       353       |         |      34,14%     |     65,86%      |
+| Vicuna           |       197       |       339       |         |      36,75%     |     63,25%      |
+| GPT4All          |       95        |       441       |         |      17,72%     |     82,28%      |
+| Koala            |       120       |       416       |         |      22,39%     |     77,61%      |
+| Vigogne          |       94        |       442       |         |      17,54%     |     82,46%      |
 | Falcon           |       22        |       514       |         |       4,10%     |     95,90%      |
 |------------------|-----------------|-----------------|---------|-----------------|-----------------|
 | Totaux           |      1801       |       3559      | Moyenne |      33,60%     |     66,40%      |
