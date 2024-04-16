@@ -77,7 +77,7 @@ We compared the accuracy of responses (number of correct answers out of the tota
 | Falcon                  |       22        |       514       |&nbsp;   |      4.10%      |
 | **Totals**              |    **2820**     |     **4684**    | **Average**|      37.58%      |
 
-We also studied the reliability of the answers (100% correct answers provided for the same question), for each LLM (following table) and also for each type of question (in the following figure)
+We also studied the reliability of the answers (100% correct answers provided for the same question), for each LLM (following table) and also for each type of question (in the following figure). You can find the detailed results in the file [reliability-rate.xlsx](reliability-rate.xlsx).
 
 | LLM           | Number of 100%<br/>correct answers | Reliability rate |
 |---------------|:---------------:|:----------------:|
@@ -98,10 +98,12 @@ We also studied the reliability of the answers (100% correct answers provided fo
 | **Total/Average** |       **135**       |      **15,55%**      |
 
 ![Reliability rate by type of questions](images/Figure-2.jpg?raw=true "Reliability rate by type of questions")
+*<small>Reliability rate by type of questions</small>*
 
 We also compiled a histogram of results by historical theme to verify the differences in precision and in reliabily among the tested LLMs:
 
 ![Reliability and precision rate by historical theme](images/Figure-1.jpg?raw=true "Reliability and precision rate by historical theme")
+*<small>Reliability and precision rate by historical theme</small>*
 
 ## Licence
 
