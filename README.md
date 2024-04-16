@@ -1,11 +1,10 @@
 # Experimental Historian LLM
 
-Ce projet de recherche dans les humanités numériques vise à tester les capacités de différents larges modèles de langage (LLM) dans le domaine des réponses à des questions (*question-answering*) en histoire. Deux objectifs principaux nous intéressent au premier chef, sur le fond comme dans la forme :
+This research project in digital humanities aims to evaluate the capabilities of various large language models (LLMs) in the domain of question-answering in history. Two primary objectives are of particular interest, both in substance and in form:
+* to analyze the quality, the accuracy and the reliability of responses provided by LLMs across different levels of historical questions,
+* to assess the feasibility of extracting predominant data from generated responses for potential reuse elsewhere.
 
-* Analyser la qualité et la précision des réponses apportées par les LLM sur différents niveaux de questions en histoire.
-* Vérifier s'il est possible d'extraire les données prépondérantes dans les réponses générées pour pouvoir les réutiliser par ailleurs.
-
-Toutes les questions ainsi que les résultats obtenus à partir de notre banc d'essai se trouvent dans le fichier [questions-types.xlsx](questions-types.xlsx)
+All questions along with the results obtained from our testbed are documented in the file [questions-and-data.xlsx](questions-and-data.xlsx)
 
 ## LLM models tested
 
@@ -28,17 +27,17 @@ Toutes les questions ainsi que les résultats obtenus à partir de notre banc d'
 
 ## Queries tested
 
-Un ensemble de 62 questions à propos de l'histoire de l'ancien Poitou (actuellement situé dans la région Nouvelle-Aquitaine) a été créé pour servir de base dans notre étude. Nous avons décomposé cet ensemble en sous-classes de questions afin de vérifier les aptitudes des LLM à répondre avec une même précision en fonction du type de questions auxquels ils sont confrontés.
+A set of 62 questions regarding the history of ancient Poitou in France (currently located in the Nouvelle-Aquitaine region) was created to serve as a foundation for our study. We decomposed this set into subclasses of questions to assess the abilities of LLMs to respond with consistent accuracy based on the type of questions they encounter.
 
-| Types de questions  | Type de données attendu dans les réponses  | Nombre de questions |
-|---------------------|--------------------------------------------|---------------------|
-| Quantitatif (fermé) | Donnée numérique                           |          16         |
-| Qualitatif (fermé)  | Métadonnée                                 |          15         |
-| Qualitatif (fermé)  | Liste de données                           |          10         |
-| Qualitatif (ouvert) | Définition/Description                     |          16         |
-| Qualitatif (ouvert) | Description détaillée d'une problématique  |          5          |
+| Types of questions  | Data type expected in responses   | Number of questions |
+|---------------------|-----------------------------------|---------------------|
+| Quantitatif (fermé) | Numeric data                      |          16         |
+| Qualitatif (fermé)  | Metadata                          |          15         |
+| Qualitatif (fermé)  | Data list                         |          10         |
+| Qualitatif (ouvert) | Definition/Description            |          16         |
+| Qualitatif (ouvert) | Detailed description of a problem |          5          |
 
-Ces questions ont été réparties dans 5 thématiques aux caractéristiques diverses :
+These questions were divided into 5 themes with various characteristics:
 
 * Bataille de Poitiers (732)
 * Bataille de Poitiers (1356)
@@ -46,41 +45,41 @@ Ces questions ont été réparties dans 5 thématiques aux caractéristiques div
 * Siège de La Rochelle (1627-1628)
 * Artisanat (époque moderne)
 
-Ces cinq sujets représentent des faits historiques tantôt très traités sur le Web mais plein de zones d'ombre pour les historiens (la bataille de Poitiers en 732 par exemple), tantôt bien connus des spécialistes (la troisième guerre de religion par exemple), ou encore relativement équivoque et complexe (l'artisanat à l'époque moderne). Nous avons cherché également à créer de potentielles confusions thématiques, ce qui explique la présence de sujets ayant été multiples dans l'histoire de France (plusieurs batailles de Poitiers ou sièges de La Rochelle notamment).
+These five topics encompass historical facts that are sometimes extensively covered on the web yet contain many gaps for historians (such as the Battle of Poitiers in 732), sometimes well-known to specialists (such as the Third War of Religion), or even relatively ambiguous and complex (such as craftsmanship in the modern era). We also aimed to create potential thematic confusions, which accounts for the inclusion of subjects that have occurred multiple times in French history (several battles of Poitiers or sieges of La Rochelle, for example).
 
 ## Méthodology
 
-Nous ne nous sommes pas contentés de poser nos questions brutes aux différents LLM testés, nous avons souhaité affiner l'analyse en proposant des variantes et vérifier si les LLM ont la capacité de bien répondre quand bien même la forme de la requête varie. Dans un premier temps, nous avons créé pour chaque question une autre variante dont le sens général est équivalent (par exemple : "Quand a eu lieu précisément la bataille de Poitiers avec Jean le Bon ?" est la question originale, et "Quelle est la date exacte de la bataille de Poitiers avec Jean le Bon ?" est sa variante). Ensuite, chacune de ces variantes a été dupliquée pour obtenir les mêmes questions en requêtes de mots clés, afin de vérifier si les LLM s'adaptent mieux à des requêtes en langue naturelle ou de mots clés (ainsi, nos requêtes d'exemples deviennent respectivement "période précise de la bataille de Poitiers avec Jean le Bon" et "date exacte de la bataille de Poitiers avec Jean le Bon"). Par conséquent, chaque question génère en réalité quatre requêtes à tester, et cela nous permet à la fois d'analyser si les LLM réagissent différemment selon le type de requête, mais aussi s'ils sont capables de fournir une bonne réponse dans chaque cas. Par ailleurs, pour compléter ce processus et s'assurer que les LLM ne répondent pas correctement uniquement par chance ou par hasard, nous avons demandé une régénération pour chaque requête posée. En définitive, nous obtenons huit réponses par question, pour chaque LLM.
+We didn't merely pose our raw questions to the various tested LLMs; we aimed to refine the analysis by offering variants to verify if LLMs can provide accurate responses even when the query form varies. Initially, for each question, we created another variant with an equivalent general meaning (for example: "When did the battle of Poitiers with Jean le Bon precisely occur?" is the original question, and "What is the exact date of the battle of Poitiers with Jean le Bon?" is its variant ***). Subsequently, each of these variants was duplicated to obtain the same questions as keyword queries, to verify if LLMs adapt better to natural language or keyword queries (thus, our example queries become respectively "precise period of the battle of Poitiers with Jean le Bon" and "exact date of the battle of Poitiers with Jean le Bon"). Consequently, each question actually generates four queries to be tested, allowing us to analyze if LLMs react differently according to the query type, and also if they are capable of providing a correct response in each case. Furthermore, to complete this process and ensure that LLMs do not respond correctly only by chance, we requested regeneration for each posed query. Ultimately, we obtain eight responses per question, for each LLM.
 
-Comme nous souhaitions également tester les variantes sémantiques et la diachronie, nous avons créé pour certains questions qualitatives fermées des variantes complémentaires en utilisant le nom des entités nommées de la période ciblée (pour répondre notre exemple, nous avons proposé les variantes "Quelle est la date exacte de la bataille de Poictiers avec Jehan le Bon ?" et "date exacte bataille de Poictiers avec Jehan le Bon"). Nous objectif était de vérifier si les LLM ont la capacité de faire des analogies entre les entités nommées actuelles et celles du passé, tout en répondant correctement à la question posée. Au total, ce sont donc 5360 réponses qui ont été vérifiées à partir de nos 5 thématiques et 62 questions d'origine.
+As we also aimed to test semantic variations and diachrony, we created complementary variants for certain closed qualitative questions using named entity names from the targeted period (to address our example, we proposed variants such as "What is the exact date of the battle of Poictiers with Jehan le Bon?" and "exact date battle of Poictiers with Jehan le Bon"). Our objective was to verify if LLMs have the capability to draw analogies between current named entities and those from the past, while still correctly answering the posed question. In total, 7504 responses were thus verified based on our 5 themes and 62 original questions (268 queries).
+
+*** All questions were asked in French in our study, we present them in English here only for ease of understanding.
 
 ## Results
 
-Nous avons comparé la précision des réponses (nombre de bonnes réponses sur le total des requêtes analysées) par LLM et nous avons obtenu ces résultats : 
+We compared the accuracy of responses (number of correct answers out of the total queries analyzed) by LLM, and we obtained these results:
 
-|&nbsp;|Résults<br/>*Correct answers*|Results<br/>*Other answers* |&nbsp;|Precision<br/>*Correct answers*|Précision<br/>*Other answers*|
-|------------------|:---------------:|:---------------:|:-------:|:---------------:|:---------------:|
-| ChatGPT (GPT4)   |       291       |       245       |&nbsp;   |      54,29%     |     45,71%      |
-| ChatGPT (GPT3.5) |       276       |       260       |&nbsp;   |      51,49%     |     48,51%      |
-| Bard             |       246       |       290       |&nbsp;   |      45,90%     |     54,10%      |
-| TextCortex       |       277       |       259       |&nbsp;   |      51,68%     |     48,32%      |
-| Guacano          |       183       |       353       |&nbsp;   |      34,14%     |     65,86%      |
-| Vicuna           |       197       |       339       |&nbsp;   |      36,75%     |     63,25%      |
-| GPT4All          |       95        |       441       |&nbsp;   |      17,72%     |     82,28%      |
-| Koala            |       120       |       416       |&nbsp;   |      22,39%     |     77,61%      |
-| Vigogne          |       94        |       442       |&nbsp;   |      17,54%     |     82,46%      |
-| Falcon           |       22        |       514       |&nbsp;   |       4,10%     |     95,90%      |
-| **Totals**       |      **1801**   |     **3559**    | **Average** |    **33,60%**   |   **66,40%**    |
+|&nbsp;|Résults<br/>*Correct answers*|Results<br/>*Other answers* |&nbsp;|Precision<br/>*Correct answers*|
+|-------------------------|:---------------:|:---------------:|:-------:|:---------------:|
+| Gemini                  |       377       |       159       |&nbsp;   |      70.34%     |
+| Copilot                 |       303       |       233       |&nbsp;   |      56.53%     |
+| ChatGPT (GPT-4)         |       287       |       249       |&nbsp;   |      53.54%     |
+| ChatGPT (GPT-3.5-Turbo) |       273       |       263       |&nbsp;   |      50.93%     |
+| Mixtral-8x7b            |       272       |       264       |&nbsp;   |      50.75%     |
+| TextCortex AI           |       266       |       270       |&nbsp;   |      49.63%     |
+| Bard                    |       244       |       292       |&nbsp;   |      45.52%     |
+| Guanaco                 |       184       |       352       |&nbsp;   |      34.33%     |
+| Vicuna                  |       197       |       339       |&nbsp;   |      36.75%     |
+| Koala                   |       120       |       416       |&nbsp;   |      22.39%     |
+| GPT4All                 |       95        |       441       |&nbsp;   |      17.72%     |
+| Vigogne                 |       94        |       442       |&nbsp;   |      17.54%     |
+| Vigostral               |       86        |       450       |&nbsp;   |      16.04%     |
+| Falcon                  |       22        |       514       |&nbsp;   |      4.10%      |
+| **Totals**              |    **2820**     |     **4684**    | **Average**|      37.58%      |
 
-Nous avons également dressé un tableau des résultats par thématique historique, afin de vérifier les différences de précision des LLM testés :
+We also compiled a histogram of results by historical theme to verify the differences in precision and in reliabily among the tested LLMs:
 
-| Thématiques                              | Bonnes réponses | Autres réponses | Précision |
-|------------------------------------------|-----------------|-----------------|-----------|
-| Bataille de Poitiers (732)               |       376       |       664       |  36,15 %  |
-| Bataille de Poitiers (1356)              |       425       |       615       |  40,87 %  |
-| Troisième guerre de religion (1568-1570) |       395       |       645       |  37,98 %  |
-| Siège de La Rochelle (1627-1628)         |       387       |       653       |  37,21 %  |
-| Artisanat à l’époque moderne             |       218       |       982       |  18,17 %  |
+![Reliability and precision rate by historical theme](images/Figure-1.jpg?raw=true "Reliability and precision rate by historical theme")
 
 ## Licence
 
