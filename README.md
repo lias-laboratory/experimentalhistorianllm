@@ -29,25 +29,25 @@ All questions along with the results obtained from our testbed are documented in
 
 A set of 62 questions regarding the history of ancient Poitou in France (currently located in the Nouvelle-Aquitaine region) was created to serve as a foundation for our study. We decomposed this set into subclasses of questions to assess the abilities of LLMs to respond with consistent accuracy based on the type of questions they encounter.
 
-| Types of questions  | Data type expected in responses   | Number of questions |
-|---------------------|-----------------------------------|---------------------|
-| Quantitatif (fermé) | Numeric data                      |          16         |
-| Qualitatif (fermé)  | Metadata                          |          15         |
-| Qualitatif (fermé)  | Data list                         |          10         |
-| Qualitatif (ouvert) | Definition/Description            |          16         |
-| Qualitatif (ouvert) | Detailed description of a problem |          5          |
+| Types of questions    | Data type expected in responses   | Number of questions |
+|-----------------------|-----------------------------------|---------------------|
+| Quantitative (closed) | Numeric data                      |          16         |
+| Qualitative (closed)  | Metadata                          |          15         |
+| Qualitative (closed)  | Data list                         |          10         |
+| Qualitative (open)    | Definition/Description            |          16         |
+| Qualitative (open)    | Detailed description of a problem |          5          |
 
 These questions were divided into 5 themes with various characteristics:
 
-* Bataille de Poitiers (732)
-* Bataille de Poitiers (1356)
-* 3ème guerre de religion (1568-1570)
-* Siège de La Rochelle (1627-1628)
-* Artisanat (époque moderne)
+* Bataille de Poitiers (732) / Battle of Poitiers (732)
+* Bataille de Poitiers (1356) / Battle of Poitiers (1356)
+* 3ème guerre de religion (1568-1570) / Third war of religion (1568-1570)
+* Siège de La Rochelle (1627-1628) / Siege of La Rochelle (1627-1628)
+* Artisanat (époque moderne) / Craftsmanship (in the modern era)
 
 These five topics encompass historical facts that are sometimes extensively covered on the web yet contain many gaps for historians (such as the Battle of Poitiers in 732), sometimes well-known to specialists (such as the Third War of Religion), or even relatively ambiguous and complex (such as craftsmanship in the modern era). We also aimed to create potential thematic confusions, which accounts for the inclusion of subjects that have occurred multiple times in French history (several battles of Poitiers or sieges of La Rochelle, for example).
 
-## Méthodology
+## Methodology
 
 We didn't merely pose our raw questions to the various tested LLMs; we aimed to refine the analysis by offering variants to verify if LLMs can provide accurate responses even when the query form varies. Initially, for each question, we created another variant with an equivalent general meaning (for example: "When did the battle of Poitiers with Jean le Bon precisely occur?" is the original question, and "What is the exact date of the battle of Poitiers with Jean le Bon?" is its variant ***). Subsequently, each of these variants was duplicated to obtain the same questions as keyword queries, to verify if LLMs adapt better to natural language or keyword queries (thus, our example queries become respectively "precise period of the battle of Poitiers with Jean le Bon" and "exact date of the battle of Poitiers with Jean le Bon"). Consequently, each question actually generates four queries to be tested, allowing us to analyze if LLMs react differently according to the query type, and also if they are capable of providing a correct response in each case. Furthermore, to complete this process and ensure that LLMs do not respond correctly only by chance, we requested regeneration for each posed query. Ultimately, we obtain eight responses per question, for each LLM.
 
@@ -59,7 +59,7 @@ As we also aimed to test semantic variations and diachrony, we created complemen
 
 We compared the accuracy of responses (number of correct answers out of the total queries analyzed) by LLM, and we obtained these results:
 
-|&nbsp;|Résults<br/>*Correct answers*|Results<br/>*Other answers* |&nbsp;|Precision<br/>*Correct answers*|
+|&nbsp;|Results<br/>*Correct answers*|Results<br/>*Other answers* |&nbsp;|Precision<br/>*Correct answers*|
 |-------------------------|:---------------:|:---------------:|:-------:|:---------------:|
 | Gemini                  |       377       |       159       |&nbsp;   |      70.34%     |
 | Copilot                 |       303       |       233       |&nbsp;   |      56.53%     |
@@ -76,6 +76,28 @@ We compared the accuracy of responses (number of correct answers out of the tota
 | Vigostral               |       86        |       450       |&nbsp;   |      16.04%     |
 | Falcon                  |       22        |       514       |&nbsp;   |      4.10%      |
 | **Totals**              |    **2820**     |     **4684**    | **Average**|      37.58%      |
+
+We also studied the reliability of the answers (100% correct answers provided for the same question), for each LLM (following table) and also for each type of question (in the following figure)
+
+| LLM           | Number of 100%<br/>correct answers | Reliability rate |
+|---------------|:---------------:|:----------------:|
+| Gemini        |       24        |      38,71%      |
+| GPT-4         |       21        |      33,87%      |
+| Copilot       |       18        |      29,03%      |
+| GPT-3.5       |       17        |      27,42%      |
+| Mixtral       |       14        |      22,58%      |
+| TextCortex    |       14        |      22,58%      |
+| Bard          |       12        |      19,35%      |
+| Vicuna        |       5         |      8,06%       |
+| Guanaco       |       4         |      6,45%       |
+| Vigostral     |       3         |      4,84%       |
+| Koala         |       2         |      3,23%       |
+| GPT4All       |       1         |      1,61%       |
+| Vigogne       |       0         |      0,00%       |
+| Falcon        |       0         |      0,00%       |
+| **Total/Average** |       **135**       |      **15,55%**      |
+
+![Reliability rate by type of questions](images/Figure-2.jpg?raw=true "Reliability rate by type of questions")
 
 We also compiled a histogram of results by historical theme to verify the differences in precision and in reliabily among the tested LLMs:
 
