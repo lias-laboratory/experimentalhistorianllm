@@ -7,22 +7,26 @@ Ce projet de recherche dans les humanités numériques vise à tester les capaci
 
 Toutes les questions ainsi que les résultats obtenus à partir de notre banc d'essai se trouvent dans le fichier [questions-types.xlsx](questions-types.xlsx)
 
-## Modèles de LLM testés
+## LLM models tested
 
-| Technologie   | Modèle           | Nombre de paramètres | Type d’usage | URL                                                       |
-|---------------|------------------|----------------------|--------------|-----------------------------------------------------------|
-| ChatGPT       | GPT-4            | 170 000 milliards    | Chat         | <https://platform.openai.com/docs/models/gpt-4>           |
-| ChatGPT       | GPT-3.5-turbo    | 175 milliards        | Chat         | <https://platform.openai.com/docs/models/gpt-3-5>         |
-| Google Bard   | PaLM 2           | ?                    | Chat         | <https://bard.google.com/>                                |
-| TextCortex AI | Sophos-2         | 20 milliards et plus | Chat         | <https://textcortex.com/fr/>                              |
-| Guanaco       | Guanaco-33b-GGML | 33 milliards         | Chat         | <https://huggingface.co/TheBloke/guanaco-33B-GGML>        |
-| Vicuna        | Vicuna-33b-v1.3  | 33 milliards         | Chat         | <https://huggingface.co/lmsys/vicuna-33b-v1.3>            |
-| GPT4All       | L13b-snoozy      | 13 milliards         | Chat         | <https://gpt4all.io>                                      |
-| Koala         | 13b-diff-v2      | 13 milliards         | Chat         | <https://bair.berkeley.edu/blog/2023/04/03/koala/>        |
-| Vigogne       | Instruct-13b     | 13 milliards         | Instruct     | <https://huggingface.co/bofenghuang/vigogne-instruct-13b> |
-| Falcon        | Instruct-7B      | 7 milliards          | Instruct     | <https://huggingface.co/tiiuae/falcon-7b-instruct>        |
+| Technology | Specific feature | Model used      | Parameters | Type of use | Release date |
+|------------|------------------|-----------------|------------|-------------|--------------|
+| ChatGPT    | Multimodal       | GPT-4           | 170,000 bn | Chat        | 03/2023      |
+| Bard       | Multimodal       | PaLM 2          | ?          | Chat        | 03/2023      |
+| Copilot    | Multimodal       | Prometheus      | ?          | Chat        | 09/2023      |
+| Gemini     | Multimodal       | Gemini-1.0      | ?          | Chat        | 12/2023      |
+| Mistral AI | FR/Mixtral       | Mixtral-8x7b    | 12/45 bn   | Instruct    | 12/2023      |
+| Vigogne    | FR/Mistral       | Vigostral-7b    | 7 bn       | Instruct    | 10/2023      |
+| Vigogne    | FR/Llama         | Instruct-13b    | 13 bn      | Instruct    | 03/2023      |
+| Guanaco    | Llama            | Guanaco-33b     | 33 bn      | Chat        | 05/2023      |
+| Vicuna     | Llama            | Vicuna-33b-v1.3 | 33 bn      | Chat        | 03/2023      |
+| Koala      | Llama            | 13b-diff-v2     | 13 bn      | Chat        | 04/2023      |
+| ChatGPT    |                  | GPT-3.5-Turbo   | 175 bn     | Chat        | 03/2022      |
+| TextCortex |                  | Sophos-2        | 20 bn      | Chat        | ?            |
+| GPT4All    |                  | L13b-snoozy     | 13 bn      | Chat        | 03/2023      |
+| Falcon     |                  | Instruct-7B     | 7 bn       | Instruct    | 04/2023      |
 
-## Requêtes testées
+## Queries tested
 
 Un ensemble de 62 questions à propos de l'histoire de l'ancien Poitou (actuellement situé dans la région Nouvelle-Aquitaine) a été créé pour servir de base dans notre étude. Nous avons décomposé cet ensemble en sous-classes de questions afin de vérifier les aptitudes des LLM à répondre avec une même précision en fonction du type de questions auxquels ils sont confrontés.
 
@@ -44,17 +48,17 @@ Ces questions ont été réparties dans 5 thématiques aux caractéristiques div
 
 Ces cinq sujets représentent des faits historiques tantôt très traités sur le Web mais plein de zones d'ombre pour les historiens (la bataille de Poitiers en 732 par exemple), tantôt bien connus des spécialistes (la troisième guerre de religion par exemple), ou encore relativement équivoque et complexe (l'artisanat à l'époque moderne). Nous avons cherché également à créer de potentielles confusions thématiques, ce qui explique la présence de sujets ayant été multiples dans l'histoire de France (plusieurs batailles de Poitiers ou sièges de La Rochelle notamment).
 
-## Méthodologie
+## Méthodology
 
 Nous ne nous sommes pas contentés de poser nos questions brutes aux différents LLM testés, nous avons souhaité affiner l'analyse en proposant des variantes et vérifier si les LLM ont la capacité de bien répondre quand bien même la forme de la requête varie. Dans un premier temps, nous avons créé pour chaque question une autre variante dont le sens général est équivalent (par exemple : "Quand a eu lieu précisément la bataille de Poitiers avec Jean le Bon ?" est la question originale, et "Quelle est la date exacte de la bataille de Poitiers avec Jean le Bon ?" est sa variante). Ensuite, chacune de ces variantes a été dupliquée pour obtenir les mêmes questions en requêtes de mots clés, afin de vérifier si les LLM s'adaptent mieux à des requêtes en langue naturelle ou de mots clés (ainsi, nos requêtes d'exemples deviennent respectivement "période précise de la bataille de Poitiers avec Jean le Bon" et "date exacte de la bataille de Poitiers avec Jean le Bon"). Par conséquent, chaque question génère en réalité quatre requêtes à tester, et cela nous permet à la fois d'analyser si les LLM réagissent différemment selon le type de requête, mais aussi s'ils sont capables de fournir une bonne réponse dans chaque cas. Par ailleurs, pour compléter ce processus et s'assurer que les LLM ne répondent pas correctement uniquement par chance ou par hasard, nous avons demandé une régénération pour chaque requête posée. En définitive, nous obtenons huit réponses par question, pour chaque LLM.
 
 Comme nous souhaitions également tester les variantes sémantiques et la diachronie, nous avons créé pour certains questions qualitatives fermées des variantes complémentaires en utilisant le nom des entités nommées de la période ciblée (pour répondre notre exemple, nous avons proposé les variantes "Quelle est la date exacte de la bataille de Poictiers avec Jehan le Bon ?" et "date exacte bataille de Poictiers avec Jehan le Bon"). Nous objectif était de vérifier si les LLM ont la capacité de faire des analogies entre les entités nommées actuelles et celles du passé, tout en répondant correctement à la question posée. Au total, ce sont donc 5360 réponses qui ont été vérifiées à partir de nos 5 thématiques et 62 questions d'origine.
 
-## Résultats obtenus
+## Results
 
 Nous avons comparé la précision des réponses (nombre de bonnes réponses sur le total des requêtes analysées) par LLM et nous avons obtenu ces résultats : 
 
-|&nbsp;|Résultats<br/>*Bonnes réponses*|Résultats<br/>*Autres réponses* |&nbsp;|Précision<br/>*Bonnes réponses*|Précision<br/>*Autres réponses*|
+|&nbsp;|Résults<br/>*Correct answers*|Results<br/>*Other answers* |&nbsp;|Precision<br/>*Correct answers*|Précision<br/>*Other answers*|
 |------------------|:---------------:|:---------------:|:-------:|:---------------:|:---------------:|
 | ChatGPT (GPT4)   |       291       |       245       |&nbsp;   |      54,29%     |     45,71%      |
 | ChatGPT (GPT3.5) |       276       |       260       |&nbsp;   |      51,49%     |     48,51%      |
@@ -66,7 +70,7 @@ Nous avons comparé la précision des réponses (nombre de bonnes réponses sur 
 | Koala            |       120       |       416       |&nbsp;   |      22,39%     |     77,61%      |
 | Vigogne          |       94        |       442       |&nbsp;   |      17,54%     |     82,46%      |
 | Falcon           |       22        |       514       |&nbsp;   |       4,10%     |     95,90%      |
-| **Totaux**       |      **1801**   |     **3559**    | **Moyenne** |    **33,60%**   |   **66,40%**    |
+| **Totals**       |      **1801**   |     **3559**    | **Average** |    **33,60%**   |   **66,40%**    |
 
 Nous avons également dressé un tableau des résultats par thématique historique, afin de vérifier les différences de précision des LLM testés :
 
@@ -80,7 +84,7 @@ Nous avons également dressé un tableau des résultats par thématique historiq
 
 ## Licence
 
-Détails du contrat de licence de l'expérience : [LICENCE](LICENSE)
+License Agreement Details: [LICENCE](LICENSE)
 
 ## Contributeurs
 
